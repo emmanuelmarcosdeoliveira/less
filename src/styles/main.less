@@ -1,0 +1,102 @@
+@import "utilitarios/mapas.less";
+@import "utilitarios/mixin.less";
+@breakpointTablet: ~"(max-width: 1023px)";
+@breakpointMobile: ~"(min-width: 768px) and (max-width: 1022px)";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #cores[CorDeBackground];
+  li {
+    list-style: none;
+  }
+}
+
+.container {
+  max-width: 960px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  @media @breakpointTablet {
+    max-width: 80%;
+  }
+  @media @breakpointMobile {
+    max-width: 70%;
+  }
+}
+
+header {
+  .profile-avatar {
+    display: block;
+    margin: 0 auto;
+    width: 160px;
+  }
+}
+
+.profile-bio {
+  .bio();
+  &-name {
+    .titulo();
+    color: #cores[corDoTexto];
+  }
+  &-subtitle {
+    .subtitulo();
+    color: #cores[corDoTexto];
+  }
+  &-description {
+    .paragrafodescricao( );
+    color: #cores[corDoTexto];
+  }
+}
+span {
+  font-weight: bold;
+  color: #fff;
+}
+.social-links {
+  display: flex;
+  justify-content: space-around;
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+  li {
+    list-style: none;
+    img {
+      transition: all ease 0.3s;
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+}
+.lista-de-projetos {
+  margin-top: 32px;
+  &-items {
+    a {
+      text-decoration: none;
+      background-color: #cores[corDoBotao];
+      display: block;
+      padding: 16px 20px;
+      margin-bottom: 8px;
+      text-align: center;
+      color: #cores[corDoTexto];
+      font-weight: 700;
+      border-radius: 30px;
+      border: 2px solid #cores[corDoBotao];
+      transition: all ease 0.5s;
+      &:hover {
+        color: #cores[corDoBotao];
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+// COMENTARIOS EM LESS (PODEMOS FAZER APENAS COM O (//)
